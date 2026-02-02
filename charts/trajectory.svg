@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <style>
+      .title { font: bold 20px sans-serif; fill: #333; }
+      .subtitle { font: 14px sans-serif; fill: #666; }
+      .axis-label { font: 12px sans-serif; fill: #666; }
+      .grid { stroke: #e0e0e0; stroke-width: 1; }
+      .axis { stroke: #333; stroke-width: 2; }
+      .legend-text { font: 11px sans-serif; fill: #333; }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" class="title">LLM Tournament Score Trajectory</text>
+  <text x="400" y="50" text-anchor="middle" class="subtitle">5-Day Accelerated Tournament - Security Thought Leadership</text>
+  
+  <!-- Grid lines -->
+  <g class="grid">
+    <!-- Horizontal grid lines (scores) -->
+    <line x1="100" y1="100" x2="700" y2="100"/>
+    <line x1="100" y1="150" x2="700" y2="150"/>
+    <line x1="100" y1="200" x2="700" y2="200"/>
+    <line x1="100" y1="250" x2="700" y2="250"/>
+    <line x1="100" y1="300" x2="700" y2="300"/>
+    <line x1="100" y1="350" x2="700" y2="350"/>
+    
+    <!-- Vertical grid lines (days) -->
+    <line x1="100" y1="100" x2="100" y2="380"/>
+    <line x1="250" y1="100" x2="250" y2="380"/>
+    <line x1="400" y1="100" x2="400" y2="380"/>
+    <line x1="550" y1="100" x2="550" y2="380"/>
+    <line x1="700" y1="100" x2="700" y2="380"/>
+  </g>
+  
+  <!-- Axes -->
+  <line x1="100" y1="380" x2="700" y2="380" class="axis"/>
+  <line x1="100" y1="100" x2="100" y2="380" class="axis"/>
+  
+  <!-- Y-axis labels (scores) -->
+  <text x="90" y="105" text-anchor="end" class="axis-label">95</text>
+  <text x="90" y="155" text-anchor="end" class="axis-label">85</text>
+  <text x="90" y="205" text-anchor="end" class="axis-label">75</text>
+  <text x="90" y="255" text-anchor="end" class="axis-label">65</text>
+  <text x="90" y="305" text-anchor="end" class="axis-label">55</text>
+  <text x="90" y="355" text-anchor="end" class="axis-label">45</text>
+  
+  <!-- X-axis labels (days) -->
+  <text x="100" y="400" text-anchor="middle" class="axis-label">Day 1</text>
+  <text x="250" y="400" text-anchor="middle" class="axis-label">Day 2</text>
+  <text x="400" y="400" text-anchor="middle" class="axis-label">Day 3</text>
+  <text x="550" y="400" text-anchor="middle" class="axis-label">Day 4</text>
+  <text x="700" y="400" text-anchor="middle" class="axis-label">Day 5</text>
+  
+  <!-- Axis titles -->
+  <text x="50" y="240" text-anchor="middle" transform="rotate(-90, 50, 240)" class="axis-label">Score</text>
+  <text x="400" y="420" text-anchor="middle" class="axis-label">Tournament Day</text>
+  
+  <!-- PUBLISH threshold line -->
+  <line x1="100" y1="200" x2="700" y2="200" stroke="#4CAF50" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="710" y="205" class="axis-label" fill="#4CAF50">PUBLISH (80)</text>
+  
+  <!-- Data lines -->
+  <!-- DeepSeek: 75, 88, 86, 93, 85 -->
+  <polyline points="100,205 250,135 400,145 550,85 700,155" 
+            fill="none" stroke="#2196F3" stroke-width="3"/>
+  <circle cx="100" cy="205" r="5" fill="#2196F3"/>
+  <circle cx="250" cy="135" r="5" fill="#2196F3"/>
+  <circle cx="400" cy="145" r="5" fill="#2196F3"/>
+  <circle cx="550" cy="85" r="8" fill="#2196F3" stroke="#FFD700" stroke-width="3"/>
+  <circle cx="700" cy="155" r="5" fill="#2196F3"/>
+  
+  <!-- Anthropic: 75, 84, 78, 78, 76 -->
+  <polyline points="100,205 250,165 400,195 550,195 700,215" 
+            fill="none" stroke="#9C27B0" stroke-width="2"/>
+  <circle cx="100" cy="205" r="4" fill="#9C27B0"/>
+  <circle cx="250" cy="165" r="4" fill="#9C27B0"/>
+  <circle cx="400" cy="195" r="4" fill="#9C27B0"/>
+  <circle cx="550" cy="195" r="4" fill="#9C27B0"/>
+  <circle cx="700" cy="215" r="4" fill="#9C27B0"/>
+  
+  <!-- Vertex: 68, 76, 82, 85, 75 -->
+  <polyline points="100,235 250,215 400,175 550,155 700,205" 
+            fill="none" stroke="#4CAF50" stroke-width="2"/>
+  <circle cx="100" cy="235" r="4" fill="#4CAF50"/>
+  <circle cx="250" cy="215" r="4" fill="#4CAF50"/>
+  <circle cx="400" cy="175" r="4" fill="#4CAF50"/>
+  <circle cx="550" cy="155" r="4" fill="#4CAF50"/>
+  <circle cx="700" cy="205" r="4" fill="#4CAF50"/>
+  
+  <!-- Azure: 65, 65, 78, 82, 75 -->
+  <polyline points="100,255 250,255 400,195 550,175 700,205" 
+            fill="none" stroke="#FF9800" stroke-width="2"/>
+  <circle cx="100" cy="255" r="4" fill="#FF9800"/>
+  <circle cx="250" cy="255" r="4" fill="#FF9800"/>
+  <circle cx="400" cy="195" r="4" fill="#FF9800"/>
+  <circle cx="550" cy="175" r="4" fill="#FF9800"/>
+  <circle cx="700" cy="205" r="4" fill="#FF9800"/>
+  
+  <!-- OpenAI: 68, 74, 66, 73, 74 -->
+  <polyline points="100,235 250,225 400,245 550,225 700,225" 
+            fill="none" stroke="#607D8B" stroke-width="2"/>
+  <circle cx="100" cy="235" r="4" fill="#607D8B"/>
+  <circle cx="250" cy="225" r="4" fill="#607D8B"/>
+  <circle cx="400" cy="245" r="4" fill="#607D8B"/>
+  <circle cx="550" cy="225" r="4" fill="#607D8B"/>
+  <circle cx="700" cy="225" r="4" fill="#607D8B"/>
+  
+  <!-- Groq: 55, 66, 72, 70, 75 -->
+  <polyline points="100,305 250,245 400,225 550,235 700,205" 
+            fill="none" stroke="#F44336" stroke-width="2"/>
+  <circle cx="100" cy="305" r="4" fill="#F44336"/>
+  <circle cx="250" cy="245" r="4" fill="#F44336"/>
+  <circle cx="400" cy="225" r="4" fill="#F44336"/>
+  <circle cx="550" cy="235" r="4" fill="#F44336"/>
+  <circle cx="700" cy="205" r="4" fill="#F44336"/>
+  
+  <!-- Qwen: 65, 70, 78, 76, 72 -->
+  <polyline points="100,255 250,235 400,195 550,215 700,225" 
+            fill="none" stroke="#795548" stroke-width="2" stroke-dasharray="5,3"/>
+  <circle cx="100" cy="255" r="4" fill="#795548"/>
+  <circle cx="250" cy="235" r="4" fill="#795548"/>
+  <circle cx="400" cy="195" r="4" fill="#795548"/>
+  <circle cx="550" cy="215" r="4" fill="#795548"/>
+  <circle cx="700" cy="225" r="4" fill="#795548"/>
+  
+  <!-- Ollama: 65, 62, 67, 75, 72 -->
+  <polyline points="100,255 250,275 400,245 550,205 700,225" 
+            fill="none" stroke="#9E9E9E" stroke-width="2" stroke-dasharray="5,3"/>
+  <circle cx="100" cy="255" r="4" fill="#9E9E9E"/>
+  <circle cx="250" cy="275" r="4" fill="#9E9E9E"/>
+  <circle cx="400" cy="245" r="4" fill="#9E9E9E"/>
+  <circle cx="550" cy="205" r="4" fill="#9E9E9E"/>
+  <circle cx="700" cy="225" r="4" fill="#9E9E9E"/>
+  
+  <!-- Legend -->
+  <rect x="100" y="435" width="600" height="55" fill="white" stroke="#ddd"/>
+  
+  <line x1="110" y1="450" x2="140" y2="450" stroke="#2196F3" stroke-width="3"/>
+  <text x="145" y="455" class="legend-text">DeepSeek (85.4 avg) 🏆</text>
+  
+  <line x1="280" y1="450" x2="310" y2="450" stroke="#9C27B0" stroke-width="2"/>
+  <text x="315" y="455" class="legend-text">Anthropic (78.2)</text>
+  
+  <line x1="420" y1="450" x2="450" y2="450" stroke="#4CAF50" stroke-width="2"/>
+  <text x="455" y="455" class="legend-text">Vertex (77.2)</text>
+  
+  <line x1="550" y1="450" x2="580" y2="450" stroke="#FF9800" stroke-width="2"/>
+  <text x="585" y="455" class="legend-text">Azure (73.0)</text>
+  
+  <line x1="110" y1="475" x2="140" y2="475" stroke="#607D8B" stroke-width="2"/>
+  <text x="145" y="480" class="legend-text">OpenAI (71.0)</text>
+  
+  <line x1="250" y1="475" x2="280" y2="475" stroke="#F44336" stroke-width="2"/>
+  <text x="285" y="480" class="legend-text">Groq (67.6)</text>
+  
+  <line x1="380" y1="475" x2="410" y2="475" stroke="#795548" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="415" y="480" class="legend-text">Qwen (72.2) [local]</text>
+  
+  <line x1="540" y1="475" x2="570" y2="475" stroke="#9E9E9E" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="575" y="480" class="legend-text">Ollama (68.2) [local]</text>
+  
+  <!-- Peak annotation -->
+  <text x="555" y="70" text-anchor="middle" font-size="12" fill="#2196F3" font-weight="bold">Peak: 93</text>
+</svg>
