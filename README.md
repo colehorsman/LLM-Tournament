@@ -9,7 +9,7 @@
 [![Risk Reduction](https://img.shields.io/badge/Risk_Reduction-42.7%25-brightgreen?style=for-the-badge)](#the-results)
 [![Attack Paths](https://img.shields.io/badge/Attack_Paths-11%2F11_Addressed-blue?style=for-the-badge)](#attack-paths--all-11-addressed)
 [![Dr. Zero Score](https://img.shields.io/badge/Dr._Zero_Score-100%2F100-gold?style=for-the-badge)](#dr-zero-review)
-[![View Report](https://img.shields.io/badge/📊_CISO_Report-View_HTML-purple?style=for-the-badge)](guardian-iam-agent/reports/day5-ciso-report-2026-02-12.html)
+[![View Report](https://img.shields.io/badge/📊_CISO_Report-View_Live-purple?style=for-the-badge)](https://colehorsman.github.io/LLM-Tournament/guardian-iam-agent/reports/day5-ciso-report-2026-02-12.html)
 
 </div>
 
