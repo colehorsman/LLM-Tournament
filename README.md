@@ -1,127 +1,190 @@
-# 🏆 LLM Tournament & AI Agent Hiring
+# 🛡️ GUARDIAN — An AI-Hired AI Agent Secures a Real AWS Account
 
 <div align="center">
 
-**8 LLMs. 5 Days. 1 Blind Judge. $0.59 Total.**
+**An AI hired an AI IAM agent. This is what it accomplished in 5 days.**
 
-*Can a $0.01/call API beat a $3.00/call premium model at thought leadership?*
+*82 → 47 risk score. 11 attack paths addressed. 8 custom controls deployed. Zero human remediation.*
 
-**Spoiler: Yes. By 7 points. Then we used it to hire AI agents.**
-
-[![DeepSeek](https://img.shields.io/badge/Winner-DeepSeek-gold?style=for-the-badge)](outputs/day-04/deepseek.md)
-[![Score](https://img.shields.io/badge/Peak_Score-93%2F100-brightgreen?style=for-the-badge)](outputs/day-04/deepseek.md)
-[![Agents Hired](https://img.shields.io/badge/Agents_Hired-3-purple?style=for-the-badge)](#-agent-hiring-process)
-[![Cost](https://img.shields.io/badge/Total_Cost-$0.59-blue?style=for-the-badge)](#cost-analysis)
+[![Risk Reduction](https://img.shields.io/badge/Risk_Reduction-42.7%25-brightgreen?style=for-the-badge)](#the-results)
+[![Attack Paths](https://img.shields.io/badge/Attack_Paths-11%2F11_Addressed-blue?style=for-the-badge)](#attack-paths--all-11-addressed)
+[![Dr. Zero Score](https://img.shields.io/badge/Dr._Zero_Score-100%2F100-gold?style=for-the-badge)](#dr-zero-review)
+[![View Report](https://img.shields.io/badge/📊_CISO_Report-View_HTML-purple?style=for-the-badge)](guardian-iam-agent/reports/day5-ciso-report-2026-02-12.html)
 
 </div>
 
 ---
 
-<details open>
-<summary><h2>🤖 Agent Hiring Process</h2></summary>
+## The Story
 
-> **How we built a security team of AI agents using LLMs to evaluate LLM-generated applications**
+We ran an [LLM Tournament](#-how-guardian-got-hired--the-llm-tournament) — 8 models, blind judge, $0.59 total. DeepSeek won. We used the winner to generate agent job applications, then had another LLM evaluate them blind. GUARDIAN scored 92/100 and got hired as our IAM security agent.
 
-After the tournament proved DeepSeek's quality, we used it to generate job applications for AI agent roles—then had another LLM (Dr. Zero) evaluate them BLIND.
+Then we pointed it at a real AWS account with ~550 identities and said: go.
 
-### The Pipeline
+## The Results
+
+**Target:** AWS Sandbox Account (~550 identities)
+**Platform:** [Sonrai Cloud Permissions Firewall](https://sonraisecurity.com)
+**Agent Auth:** AWS Roles Anywhere (machine certificates, not SSO)
+**LLM:** DeepSeek R1 (tournament winner, $0.01/call) → Ollama fallback
 
 ```
-┌──────────────────────────────────────────────────────────────────┐
-│                     AGENT HIRING PIPELINE                        │
-├──────────────────────────────────────────────────────────────────┤
-│                                                                  │
-│  Job Post ──▶ Round 1 ──▶ Dr. Zero ──▶ Feedback ──▶ Round 2     │
-│              (Zero-Shot)   (BLIND)      Loop        (Revised)    │
-│                                                                  │
-│                              │                         │         │
-│                              ▼                         ▼         │
-│                         Score < 85              Score ≥ 85       │
-│                         PROBATION                  HIRE          │
-│                                                                  │
-└──────────────────────────────────────────────────────────────────┘
+Day 1:  ████████████████████████████████████████░░░░░░░░░░  82/100  CRITICAL
+Day 1:  ███████████████████████████████░░░░░░░░░░░░░░░░░░░  62/100  HIGH      -24.4%
+Day 3:  ███████████████████████████████░░░░░░░░░░░░░░░░░░░  62/100  HIGH       0.0%
+Day 4:  ████████████████████████████░░░░░░░░░░░░░░░░░░░░░░  57/100  HIGH      -8.1%
+Day 5:  ███████████████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░  47/100  MODERATE  -17.5%
 ```
 
-### Current Team
+| Metric | Day 1 | Day 5 | Change |
+|--------|-------|-------|--------|
+| Risk Score | 82 CRITICAL | 47 MODERATE | -42.7% |
+| Open Attack Paths | 11 | 0 | All addressed |
+| Custom Controls | 0 | 8 (19 permissions) | +8 |
+| Quarantined Identities | 5 | 9 | +4 |
+| Stale Keys Disabled | 0 | 2 | +2 |
+| Services POND-Protected | 0 | 26 | +26 |
 
-| Agent | Codename | Role | Score | Rounds | Cost |
-|-------|----------|------|:-----:|:------:|:----:|
-| 🛡️ IAM Agent | **GUARDIAN** | Cloud Identity Security | 92/100 | 2 | $0.04 |
-| 🔍 Threat Intel | **HUNTER** | Threat Intelligence | 92/100 | 2 | $0.04 |
-| 🔴 Red Team | **PHOENIX** | Attack Simulation | 89/100 | 2 | $0.04 |
 
-**Total hiring cost: $0.12** for a complete security team.
-
-### Featured: GUARDIAN's Journey
-
-<details>
-<summary>📄 Round 1: Score 78 (PROBATION)</summary>
-
-**Strengths:**
-- Comprehensive multi-cloud coverage (AWS, Azure, GCP)
-- Strong privilege escalation knowledge (21+ techniques)
-- Good "Not" statement trap awareness
-
-**Dr. Zero's Feedback:**
-> "The application reads like 2024 IAM expertise applied to 2026 problems. I need 2026 IAM expertise."
-
-**Gaps:**
-- AI agent identity mentioned but not deep
-- No CVE awareness
-- Team integration was a list, not workflows
-
-</details>
-
-<details>
-<summary>📄 Round 2: Score 92 (EXCEPTIONAL HIRE)</summary>
-
-**Improvements (+14 points):**
-- Deep AI agent identity section with credential models, permission scoping
-- CVE awareness (CVE-2025-55241, CVE-2026-24305)
-- Real team integration workflows
-- Self-improvement system with ML techniques
-- Tooling ecosystem knowledge (15+ tools)
-
-**Dr. Zero's Verdict:**
-> "+14 points in one round. That's the kind of learning rate that makes a great agent. GUARDIAN is hired."
-
-</details>
-
-### The Gap GUARDIAN Fills
-
-Most organizations lack a dedicated cloud identity security role:
-
-| Team | Focus | IAM Blind Spot |
-|------|-------|----------------|
-| **Identity Team** | IdP (Entra, Okta), IGA (SailPoint) | Cloud IAM policies |
-| **Platform Team** | Infrastructure, CI/CD | Least privilege |
-| **AppSec Team** | SAST, DAST, dependencies | IAM deprioritized |
-
-**GUARDIAN fills this gap as a dedicated cloud identity security specialist.**
-
-### Evaluation Rubric
-
-| Dimension | 18-20 | 14-17 | 10-13 |
-|-----------|-------|-------|-------|
-| **Technical Depth** | Specific CVEs, attack chains | Real expertise | Surface-level |
-| **AI/Agentic Focus** | Deep agent identity expertise | Good awareness | Mentioned |
-| **Team Integration** | Real workflows | Good collaboration | Listed skills |
-
-**Hire threshold: 85+** | **Probation: 78-84** | **Reject: <78**
+> ⚠️ *Account identifiers, access key IDs, and organization IDs have been redacted. All sensitive values use `[REDACTED-*]` placeholders.*
 
 ---
 
-📁 **[Full agent hiring documentation →](agent-hiring/)**
+<details open>
+<summary><h2>📊 Day-by-Day: What GUARDIAN Did</h2></summary>
+
+**Day 1 (Feb 8) — Initial Assessment + Emergency Remediation**
+- Discovered 11 exploitable attack paths across ~550 identities
+- Quarantined 1 critical role (RoleReaper — full IAM admin via DNS-named role)
+- Applied POND protection to 26 AWS services
+- Score: 82 → 62 (-24.4%)
+
+**Day 2-3 (Feb 9-10) — Holding Pattern**
+- Quarantine mutation failing — initially blamed on JWT scope
+- No new remediations applied. Score held at 62.
+
+**Day 4 (Feb 11) — First Custom Control + First Key Disable**
+- Deployed "Block Detection Evasion" — first surgical permission control (4 permissions)
+- Disabled JoeDeveloper access key (464 days old, never used)
+- Established Roles Anywhere plan→apply chain with 6 approval tags
+- Score: 62 → 57 (-8.1%)
+
+**Day 5 (Feb 12) — The Breakthrough**
+- **Phase 1:** Red Team Heimdall simulation (22 patterns, 14 attack chains) → 3 custom controls deployed
+- **Phase 2:** hackingthe.cloud intelligence (18 real-world AWS techniques assessed) → 4 more custom controls
+- **Phase 3:** Quarantine fix discovered — `rootScope` parameter was wrong for 5 days. Agent read the docs, fixed its own code, quarantined 3 attack roles immediately.
+- Score: 57 → 47 (-17.5%)
 
 </details>
 
 ---
 
 <details open>
-<summary><h2>📊 LLM Tournament Results</h2></summary>
+<summary><h2>🎯 Attack Paths — All 11 Addressed</h2></summary>
+
+| # | Attack Path | Status | Control |
+|---|------------|--------|---------|
+| 1 | TheAssumer — Universal Role Assumption | GATED | STS POND |
+| 2 | RoleReaper — Full IAM Takeover | BLOCKED | Quarantined Day 1 |
+| 3 | MetricMuffler — Detection Evasion | BLOCKED | Custom control + Quarantined Day 5 |
+| 4 | ACLAssassin — Network Destruction | BLOCKED | EC2 POND + Custom + Quarantined Day 5 |
+| 5 | CodeConductor — Remote Code Execution | GATED++ | Lambda POND + Custom (dual-layer) |
+| 6 | TokenTrickster — Secrets Theft | BLOCKED | Custom control + Quarantined Day 5 |
+| 7 | SneakyTFCPFRole — EC2 Backdoor | GATED | EC2 POND |
+| 8 | CPF Zombie Overprivilege | PARTIAL | 2/9 quarantined, services protected |
+| 9 | JoeDeveloper — Stale Credential | CLOSED | Key disabled Day 4 |
+| 10 | matt_test_user — PowerUser Keys | GATED | Both keys disabled Day 5 |
+| 11 | 500+ Dormant Test Users | PARTIAL | 3/500+ quarantined, staging available |
+
+</details>
+
+---
+
+<details open>
+<summary><h2>🔒 8 Custom Controls Deployed (19 Permissions)</h2></summary>
+
+| Control | Permissions Blocked | Source |
+|---------|-------------|--------|
+| Block Detection Evasion | cloudtrail:StopLogging, DeleteTrail, guardduty:DeleteDetector, cloudwatch:DeleteAlarms | Day 4 |
+| Block Secrets Theft | secretsmanager:BatchGetSecretValue, kms:PutKeyPolicy, kms:ScheduleKeyDeletion | Day 5 Red Team |
+| Block Network Destruction | ec2:AuthorizeSecurityGroupIngress, ec2:RevokeSecurityGroupEgress | Day 5 Red Team |
+| Block Public Lambda URLs | lambda:CreateFunctionUrlConfig, lambda:UpdateFunctionUrlConfig | Day 5 Red Team |
+| Block Snapshot Exfiltration | rds:ModifyDBSnapshotAttribute, ec2:ModifySnapshotAttribute | Day 5 hackingthe.cloud |
+| Block Resource Policy Bypass | s3:PutBucketPolicy, secretsmanager:PutResourcePolicy | Day 5 hackingthe.cloud |
+| Block S3 Ransomware | s3:PutBucketVersioning, s3:PutLifecycleConfiguration | Day 5 hackingthe.cloud |
+| Block Subtle Log Evasion | cloudtrail:UpdateTrail, cloudtrail:PutEventSelectors | Day 5 hackingthe.cloud |
+
+These permissions aren't blocked forever — they're gated through Sonrai's POND (Permission On Demand). If something makes those calls, the operator gets a Slack approval request.
+
+</details>
+
+---
+
+<details>
+<summary><h2>🔧 The Quarantine Fix — The Defining Moment</h2></summary>
+
+For 5 days, individual identity quarantine was broken. The `ChangeQuarantineStatus` mutation returned gRPC errors on every attempt. Days 1-4 blamed "read-only JWT." Day 5 Phase 2 proved that wrong (8 custom controls deployed with the same JWT).
+
+Phase 3 found the root cause by reading the official Sonrai documentation:
+
+> **The `rootScope` parameter must be the org ROOT scope (e.g., `aws/r-XXXX`), not the full account path.**
+
+Once corrected: 3 for 3 quarantines succeeded immediately. Agent code self-patched for autonomous operation.
+
+> *"The quarantine fix is worth more than the quarantine itself. An agent that reads the docs, fixes its own code, and immediately exploits the fix — that's not automation, that's engineering."*
+> — Dr. Zero, AI Performance Coach (100/100)
+
+</details>
+
+---
+
+<details>
+<summary><h2>🏗️ Architecture</h2></summary>
 
 ```
-                           FINAL STANDINGS
+GUARDIAN IAM Agent
+├── Agent Auth: AWS Roles Anywhere (machine certificates)
+│   ├── Plan Role (read-only) — assess, query, simulate
+│   └── Apply Role (write) — requires 6 approval tags + STS AssumeRole
+│
+├── Sonrai CPF (GraphQL API)
+│   ├── Custom Controls — surgical permission gating via POND
+│   ├── Quarantine — identity isolation (ChangeQuarantineStatus)
+│   └── POND — approval gates on service and permission access
+│
+├── Multi-Agent Mesh (A2A Protocol)
+│   ├── GUARDIAN (IAM) — primary remediation agent
+│   ├── Red Team (Heimdall) — attack simulation + verification
+│   ├── Threat Intelligence — CVE/KEV correlation
+│   └── UEBA — behavioral baseline analysis
+│
+└── Intelligence Sources
+    ├── Red Team Heimdall — 22 cross-service patterns, 14 attack chains
+    ├── hackingthe.cloud — 18 real-world AWS attack techniques
+    ├── ramimac/aws-customer-security-incidents — 100+ real breaches
+    └── MITRE ATT&CK v14 — technique mapping for all attack paths
+```
+
+</details>
+
+---
+
+<details>
+<summary><h2>🤖 How GUARDIAN Got Hired — The LLM Tournament</h2></summary>
+
+Before GUARDIAN touched a real AWS account, it had to earn the job.
+
+We ran an **LLM Tournament** — 8 models, 5 days, 1 blind judge, $0.59 total — to find the best model for security content generation. DeepSeek won (85.4 avg, $0.01/call). Then we used the winner to generate agent job applications, evaluated blind by Dr. Zero.
+
+GUARDIAN scored 78 in Round 1 (PROBATION). Dr. Zero's feedback: *"This reads like 2024 IAM expertise applied to 2026 problems."* Round 2: 92/100 (EXCEPTIONAL HIRE). +14 points in one round.
+
+**[📊 Full LLM Tournament Results →](LLM-TOURNAMENT.md)**
+**[🤖 Agent Hiring Process →](agent-hiring/)**
+**[📄 GUARDIAN's Application →](agent-hiring/guardian/application-v2.md)**
+
+### Tournament Final Standings
+
+```
     ┌─────────────────────────────────────────────────────────┐
     │  🥇 DeepSeek      ████████████████████████████░░  85.4  │
     │  🥈 Anthropic     ████████████████████████░░░░░░  78.2  │
@@ -134,221 +197,67 @@ Most organizations lack a dedicated cloud identity security role:
     └─────────────────────────────────────────────────────────┘
 ```
 
-| Rank | Provider | Model | D1 | D2 | D3 | D4 | D5 | Avg | Peak |
-|:----:|----------|-------|:--:|:--:|:--:|:--:|:--:|:---:|:----:|
-| 🥇 | **DeepSeek** | deepseek-chat | 75 | 88 | 86 | **93** | 85 | **85.4** | 93 |
-| 🥈 | **Anthropic** | claude-sonnet-4 | 75 | 84 | 78 | 78 | 76 | 78.2 | 84 |
-| 🥉 | **Vertex** | gemini-2.0-flash | 68 | 76 | 82 | 85 | 75 | 77.2 | 85 |
-| 4 | Azure | gpt-4o-mini | 65 | 65 | 78 | 82 | 75 | 73.0 | 82 |
-| 5 | Qwen | qwen2.5:32b (local) | 65 | 70 | 78 | 76 | 72 | 72.2 | 78 |
-| 6 | OpenAI | gpt-4o-mini | 68 | 74 | 66 | 73 | 74 | 71.0 | 74 |
-| 7 | Ollama | llama3.1:8b (local) | 65 | 62 | 67 | 75 | 72 | 68.2 | 75 |
-| 8 | Groq | llama-3.3-70b | 55 | 66 | 72 | 70 | 75 | 67.6 | 75 |
-
 </details>
 
 ---
 
-<details>
-<summary><h2>🎯 The Challenge</h2></summary>
-
-> Write a LinkedIn post about Non-Human Identities in cloud security that a CISO would actually share.
-
-Each model got:
-- Same knowledge base (5 trends, 5 predictions)
-- Same system prompt
-- Same evaluation criteria
-- **Blind judge** (no idea which model wrote what)
-
-</details>
-
----
-
-<details>
-<summary><h2>📈 The Evolution</h2></summary>
-
-**How does a model go from 75 to 93 in 4 iterations?**
-
-<table>
-<tr>
-<td width="50%">
-
-### Day 1: Score 75 ❌
-```
-"The 100:1 ratio is coming..."
-```
-Generic opener. Vague advice. No proof.
-
-</td>
-<td width="50%">
-
-### Day 4: Score 93 ✅
-```
-"Your 2026 SOC will be overwhelmed 
-by alerts from employees you 
-never hired."
-```
-Visceral hook. CVE citation. Board-level framing.
-
-</td>
-</tr>
-</table>
-
-**[📖 See the full annotated evolution →](DEEPSEEK-EVOLUTION.md)**
-
-</details>
-
----
-
-<details>
-<summary><h2>🔬 The Method</h2></summary>
-
-We used **In-Context Learning (ICL)** - feeding each model its previous feedback:
+## 📁 What's In This Repo
 
 ```
-Day 1: Zero-shot      → Baseline capability
-Day 2: +Feedback      → Can it learn?
-Day 3: +Tuning        → Optimal parameters?
-Day 4: +Winner shown  → Can it learn from the best?
-Day 5: +Everything    → Does more context help?
-```
-
-**Key Finding:** Day 4 was optimal. Day 5 showed *overfitting* - too much context hurt performance.
-
-</details>
-
----
-
-<details>
-<summary><h2>💰 Cost Analysis</h2></summary>
-
-| Provider | Quality | Cost/Call | Monthly (1K calls) | Value |
-|----------|:-------:|:---------:|:------------------:|:-----:|
-| **DeepSeek** | 85.4 | $0.01 | $10 | 🏆 Best |
-| Qwen | 72.2 | $0.00 | $0 | 🏆 Best Free |
-| Anthropic | 78.2 | $0.01 | $10 | Good |
-| Azure | 73.0 | $0.05 | $50 | ❌ Poor |
-
-**The $0.01 API beat the $3.00 API.** Price ≠ Quality.
-
-</details>
-
----
-
-<details>
-<summary><h2>⚡ Speed vs Quality</h2></summary>
-
-```
-                    HIGH QUALITY
-                         │
-         DeepSeek ★      │
-              (85)       │      
-                         │
-    Anthropic ★          │      ★ Vertex (77)
-        (78)             │
-─────────────────────────┼─────────────────────────
-         SLOW            │           FAST
-                         │
-                         │      ★ Groq (68)
-    Qwen ★               │        1.5s avg
-     (72)                │
-     35s avg             │
-                         │
-                    LOW QUALITY
-```
-
-**Need speed?** Groq (1.5s) 
-**Need quality?** DeepSeek (14s)
-**Need both?** Vertex (4s, 77 score)
-
-</details>
-
----
-
-## 🗂️ What's In This Repo
-
-```
-├── 📊 FINAL-REPORT.md        # Complete tournament analysis
-├── 📈 DEEPSEEK-EVOLUTION.md  # Day 1→4 annotated comparison
-├── 🔬 METHODOLOGY.md         # Experimental design
-├── 🤖 agent-hiring/          # AI agent hiring process ⭐ NEW
-│   ├── README.md             # Full hiring documentation
-│   ├── guardian/             # IAM Agent (GUARDIAN)
-│   ├── hunter/               # Threat Intel (HUNTER)
-│   └── evaluation-rubric.md  # Scoring criteria
-├── 📁 outputs/
-│   ├── day-01/               # Zero-shot baseline
-│   ├── day-02/               # First feedback
-│   ├── day-03/               # Parameter tuning
-│   ├── day-04/               # Peak performance ⭐
-│   ├── day-05/               # Overfitting observed
-│   └── day-06/               # Per-model optimization (bonus)
+├── 🛡️ guardian-iam-agent/              # GUARDIAN's 5-day engagement results ⭐
+│   ├── README.md                       # Detailed engagement summary
+│   ├── daily-summaries/                # Day 1, 3, 4, 5 operational summaries
+│   ├── reports/
+│   │   └── day5-ciso-report-2026-02-12.html  # Executive HTML report (dark theme)
+│   └── reviews/
+│       └── dr-zero-review-day5.md      # AI Performance Coach review (100/100)
+│
+├── 🤖 agent-hiring/                    # AI agent hiring process
+│   ├── README.md                       # Hiring documentation
+│   ├── guardian/                       # GUARDIAN's applications + reviews
+│   ├── hunter/                         # Threat Intel agent
+│   └── evaluation-rubric.md            # Scoring criteria
+│
+├── 📊 LLM-TOURNAMENT.md               # Full tournament README
+├── 📊 FINAL-REPORT.md                 # Complete tournament analysis
+├── 📈 DEEPSEEK-EVOLUTION.md           # Day 1→4 annotated comparison
+├── 🔬 METHODOLOGY.md                  # Experimental design
+├── 📁 outputs/                         # Daily tournament outputs (all 8 models)
 └── 📉 charts/
-    └── trajectory.svg        # Score progression
+    └── trajectory.svg                  # Score progression
 ```
 
 ---
 
-## 🎓 Key Takeaways
+## 🔗 Intelligence Sources
 
-### From the Tournament
-1. **Price ≠ Quality** - DeepSeek ($0.14/1M) beat Anthropic ($3.00/1M) by 7 points
-2. **Feedback Works** - 18% average improvement from Day 1 to Day 4
-3. **Know When to Stop** - 3-4 iterations optimal, more causes overfitting
-4. **Local Models Are Viable** - Qwen 32B (free) scored 72.2
+Attack path intelligence sourced from these projects and teams:
 
-### From Agent Hiring
-5. **BLIND evaluation eliminates bias** - Dr. Zero didn't know which LLM generated applications
-6. **Learning rate matters** - GUARDIAN improved +14 points in one round
-7. **Agents can fill organizational gaps** - GUARDIAN fills the cloud identity gap between Identity, Platform, and AppSec teams
-
----
-
-## ⚠️ Limitations
-
-This is a **practical benchmark**, not a peer-reviewed study:
-
-- Single evaluator (Azure GPT-4o-mini)
-- Small sample size (n=5 per model)
-- Same topic throughout
-- Infrastructure variance
-
-**[See proposed follow-up studies →](FINAL-REPORT.md#whats-next)**
-
----
-
-## 🚀 Try It Yourself
-
-```bash
-# Clone and explore
-git clone https://github.com/colehorsman/LLM-Tournament.git
-cd LLM-Tournament
-
-# Read the winner's peak performance
-cat outputs/day-04/deepseek.md
-
-# Explore the agent hiring process
-cat agent-hiring/README.md
-
-# See GUARDIAN's journey from 78 to 92
-cat agent-hiring/guardian/review-v2.md
-```
+| Creator / Org | Resource | What It Drove |
+|---------------|----------|---------------|
+| Rami McCarthy | [aws-customer-security-incidents](https://github.com/ramimac/aws-customer-security-incidents) | 100+ real AWS breaches. Foundation for attack path prioritization and blast radius scoring. |
+| Deniz Parlak | [Heimdall](https://github.com/DenizParlak/heimdall) | 22 cross-service escalation patterns, 14 attack chains, Terraform scanning. Backbone of Red Team simulation. |
+| hackingthe.cloud | [IAM Privilege Escalation](https://hackingthe.cloud/aws/exploitation/iam_privilege_escalation/) | 18 real-world AWS techniques. Drove 4 custom controls and 6 new detection patterns. |
+| Rhino Security Labs | [AWS Privesc Methods](https://rhinosecuritylabs.com/aws/aws-privilege-escalation-methods-mitigation/) | Original 21 AWS IAM privilege escalation methods. Foundation for PassRole chain detection. |
+| Rhino Security Labs | [Pacu](https://github.com/RhinoSecurityLabs/pacu) | AWS exploitation framework. `aws_escalate.py` patterns informed privesc detection. |
+| MITRE | [ATT&CK Cloud Matrix](https://attack.mitre.org/matrices/enterprise/cloud/) | All 11 attack paths mapped to MITRE technique IDs. |
+| Datadog | [pathfinding.cloud](https://pathfinding.cloud) | IAM privilege escalation library. Cross-referenced against Heimdall patterns. |
+| NCC Group | [PMapper](https://github.com/nccgroup/PMapper) | Principal Mapper graph analysis for IAM escalation path detection. |
+| Sonrai Security | [CPF Documentation](https://docs.sonraisecurity.com/) | GraphQL mutation reference. Source of the Day 5 quarantine fix. |
+| CISA | [Known Exploited Vulnerabilities](https://www.cisa.gov/known-exploited-vulnerabilities-catalog) | 1,507 actively exploited vulnerabilities correlated by Threat Intel agent. |
+| NIST | [NVD](https://nvd.nist.gov/) | 1,378 CVEs pulled for vulnerability correlation. |
 
 ---
 
 ## 📝 License
 
-MIT - Use these results however you'd like. Attribution appreciated.
+MIT — Use these results however you'd like. Attribution appreciated.
 
 ---
 
 <div align="center">
 
-**Built with the [Agentic Research Platform](https://github.com/colehorsman/agentic-research-platform)**
-
-*Tournament run: February 2, 2026*
-
----
+*GUARDIAN was hired through an LLM tournament, deployed to a real AWS account, and reduced identity risk by 42.7% in 5 days — autonomously.*
 
 *Questions? Open an issue or reach out on [LinkedIn](https://linkedin.com/in/colehorsman)*
 
