@@ -249,6 +249,15 @@ Attack path intelligence sourced from these projects and teams:
 
 ---
 
+---
+
+## 🙏 Credits
+
+| Who | What |
+|-----|------|
+| [Caleb Sima](https://github.com/csima) | Dr. Zero's blind evaluation methodology is inspired by Caleb's [sessionize-cli](https://github.com/csima/sessionize-cli) — a CLI for reviewing conference talks without bias. We adapted the pattern for agent hiring and daily performance reviews. |
+| Dr. Viktor "Zero" Kozlov | AI Performance Coach. Blind evaluator for the LLM tournament, agent hiring process, and all 5 days of GUARDIAN's operational reviews. Scored GUARDIAN's Day 5 performance 100/100. |
+
 ## 📝 License
 
 MIT — Use these results however you'd like. Attribution appreciated.
