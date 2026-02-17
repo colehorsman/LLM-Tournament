@@ -89,11 +89,11 @@ Source: `IdentitiesStagedForQuarantine` — 2026-02-10
 
 | Status | Count | Examples |
 |--------|-------|---------|
-| DENIED | 14 | EC2 priv perms ([REDACTED-USER-1], cpf-temp), S3 sensitive ([REDACTED-USER-2], QuickSetup), SageMaker/Macie/RDS/Redshift service blocks, VPC Lattice block |
-| APPROVED | 5 | Bedrock ([REDACTED-USER-1], guardian-kb-role, BedrockAgentCore), S3 ([REDACTED-USER-1]), SSM ([REDACTED-USER-1]) |
+| DENIED | 14 | EC2 priv perms (Cole, cpf-temp), S3 sensitive (Chris, QuickSetup), SageMaker/Macie/RDS/Redshift service blocks, VPC Lattice block |
+| APPROVED | 5 | Bedrock (Cole, guardian-kb-role, BedrockAgentCore), S3 (Cole), SSM (Cole) |
 | REVOKED | 1 | OrganizationAccountAccessRole — IAM sensitive perms |
 | EXPIRED | 1 | QuickSetup-HostMgmtRole — SSM sensitive perms |
-| UNMANAGED | 1 | [REDACTED-USER-1] — drift detected |
+| UNMANAGED | 1 | Cole Horsman — drift detected |
 | REANIMATE DENIED | 1 | cpf-zombie_outbreak — quarantined identity attempted action, BLOCKED |
 
 **Key finding still holds:** cpf-zombie_outbreak (quarantined) attempted to reanimate and was denied. POND enforcement is working.

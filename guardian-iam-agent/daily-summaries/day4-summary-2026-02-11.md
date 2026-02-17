@@ -149,7 +149,7 @@ Source: `IdentitiesInQuarantine` — 2026-02-11T20:44Z
 | APPROVED | 6 | +1: `agentforge-guardian-iam-apply` approved for IAM write (operator action) |
 | REVOKED | 1 | OrganizationAccountAccessRole |
 | EXPIRED | 1 | QuickSetup-HostMgmtRole |
-| UNMANAGED | 1 | [REDACTED-USER-1] — drift detected |
+| UNMANAGED | 1 | Cole Horsman — drift detected |
 | REANIMATE DENIED | 1 | cpf-zombie_outbreak — quarantined identity blocked |
 
 **New POND activity:** The apply role's `iam:UpdateAccessKey` was initially denied by Sonrai SCP `p-mpqlu7n5`. Operator approved the apply role in POND, enabling the key disable. This is the correct flow — Sonrai gates the write, human approves.
