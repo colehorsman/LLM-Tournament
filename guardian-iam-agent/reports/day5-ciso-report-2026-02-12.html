@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XPW6BZ3MD1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XPW6BZ3MD1');
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>GUARDIAN IAM Agent — Day 5 Security Posture Report</title>
@@ -1194,5 +1202,50 @@
 </div>
 
 </div><!-- /container -->
+
+<!-- Custom GA4 Event Tracking -->
+<script>
+(function() {
+  document.querySelectorAll('details').forEach(function(d) {
+    d.addEventListener('toggle', function() {
+      if (d.open) {
+        gtag('event', 'section_opened', {
+          event_category: 'report_engagement',
+          event_label: d.querySelector('summary')?.textContent?.trim().substring(0, 80) || 'unknown'
+        });
+      }
+    });
+  });
+  var scrollFired = {};
+  window.addEventListener('scroll', function() {
+    var pct = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+    [25, 50, 75, 100].forEach(function(t) {
+      if (pct >= t && !scrollFired[t]) {
+        scrollFired[t] = true;
+        gtag('event', 'scroll_depth', { event_category: 'report_engagement', event_label: t + '%', value: t });
+      }
+    });
+  });
+  document.querySelectorAll('a[href^="http"]').forEach(function(a) {
+    a.addEventListener('click', function() {
+      gtag('event', 'outbound_click', { event_category: 'navigation', event_label: a.href, transport_type: 'beacon' });
+    });
+  });
+  [30, 60, 120, 300].forEach(function(s) {
+    setTimeout(function() {
+      gtag('event', 'time_on_page', { event_category: 'report_engagement', event_label: s + 's', value: s });
+    }, s * 1000);
+  });
+  document.addEventListener('visibilitychange', function() {
+    gtag('event', 'visibility_change', { event_category: 'report_engagement', event_label: document.visibilityState });
+  });
+  document.addEventListener('copy', function() {
+    gtag('event', 'content_copied', { event_category: 'report_engagement', event_label: (window.getSelection()?.toString() || '').substring(0, 100) });
+  });
+  window.addEventListener('beforeprint', function() {
+    gtag('event', 'print_attempt', { event_category: 'report_engagement', event_label: document.title });
+  });
+})();
+</script>
 </body>
 </html>
