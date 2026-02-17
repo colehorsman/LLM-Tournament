@@ -1,5 +1,5 @@
 # GUARDIAN PLAN — Post-Apply Status Report
-## MyHealth Sandbox — Account [REDACTED-ACCOUNT-ID]
+## [REDACTED-SANDBOX] — Account [REDACTED-ACCOUNT-ID]
 ### Remediation Progress for CISO Review
 
 **Report Date:** 2026-02-08
@@ -13,7 +13,7 @@
 
 ## Executive Summary for CISO
 
-In a single session, GUARDIAN identified 11 attack paths in the MyHealth Sandbox and recommended 12 remediation decisions. Three high-impact decisions have been applied through Sonrai, plus two additional service protections staged ahead of schedule. The result: a 24% reduction in overall IAM risk, with the single most dangerous role in the account now quarantined and the most critical service (STS) now protected.
+In a single session, GUARDIAN identified 11 attack paths in the [REDACTED-SANDBOX] and recommended 12 remediation decisions. Three high-impact decisions have been applied through Sonrai, plus two additional service protections staged ahead of schedule. The result: a 24% reduction in overall IAM risk, with the single most dangerous role in the account now quarantined and the most critical service (STS) now protected.
 
 **Before today:** An attacker with any foothold in this account could chain through TheAssumer to assume any of 75+ roles, escalate to full admin via RoleReaper_DNS, blind all detection via MetricMuffler, and operate undetected. Every step of the November 2025 AWS crypto mining campaign was reproducible.
 
@@ -150,15 +150,15 @@ Dr. Zero's biggest criticism of the multi-agent report was that POND results wer
 |----------|-----------|---------|--------|------|
 | cpf-zombie_outbreak | s3:CreateBucket | S3 | DENIED | 2026-01-27 |
 | cpf-temp-5a5e4435 | ec2:CreateVpc | EC2 | DENIED | 2025-12-11 |
-| Cole Horsman | ec2:CreateVpc | EC2 | DENIED | 2026-01-30 |
+| [REDACTED-USER-1] | ec2:CreateVpc | EC2 | DENIED | 2026-01-30 |
 | OrganizationAccountAccessRole | iam:PutUserPolicy | IAM | REVOKED | 2025-12-01 |
 | AWS-QuickSetup-StackSet-Local-ExecutionRole | s3:PutBucketPolicy | S3 | DENIED | 2025-12-11 |
-| Chris Fredericks | s3:PutBucketPolicy | S3 | DENIED | 2025-12-11 |
-| Cole Horsman | cost-optimization-hub:ListEnrollmentStatuses | Cost Hub | DENIED | 2026-02-08 |
-| Cole Horsman | sagemaker:ListHubContents | SageMaker | DENIED | 2026-02-08 |
-| Cole Horsman | bedrock:CreateDataSource | Bedrock | APPROVED | 2026-02-06 |
-| Cole Horsman | s3:PutBucketPolicy | S3 | APPROVED | 2026-01-12 |
-| Cole Horsman | ssm:StartSession | SSM | APPROVED | 2026-01-28 |
+| [REDACTED-USER-2] | s3:PutBucketPolicy | S3 | DENIED | 2025-12-11 |
+| [REDACTED-USER-1] | cost-optimization-hub:ListEnrollmentStatuses | Cost Hub | DENIED | 2026-02-08 |
+| [REDACTED-USER-1] | sagemaker:ListHubContents | SageMaker | DENIED | 2026-02-08 |
+| [REDACTED-USER-1] | bedrock:CreateDataSource | Bedrock | APPROVED | 2026-02-06 |
+| [REDACTED-USER-1] | s3:PutBucketPolicy | S3 | APPROVED | 2026-01-12 |
+| [REDACTED-USER-1] | ssm:StartSession | SSM | APPROVED | 2026-01-28 |
 | guardian-iam-agent-sandbox-kb-role | bedrock:InvokeModel | Bedrock | APPROVED | 2026-02-07 |
 | AmazonBedrockAgentCoreSDKRuntime | bedrock:InvokeModelWithResponseStream | Bedrock | APPROVED | 2026-02-06 |
 
@@ -213,8 +213,8 @@ These decisions from the original Guardian Plan are still pending:
 |----------|--------|--------|-----------|--------|-------------------|
 | 4 | Quarantine MetricMuffler | role-MetricMuffler | 85/100 | PENDING | -4 points |
 | 5 | Quarantine CodeConductor | role-CodeConductor | 82/100 | PARTIALLY MITIGATED (Lambda protected) | -2 points (reduced — Lambda gated) |
-| 6 | Disable JoeDeveloper key | AKIA...BUUT | 80/100 | PENDING | -3 points |
-| 7 | Disable matt_test_user key | AKIA...XMMU | 72/100 | PENDING | -2 points |
+| 6 | Disable JoeDeveloper key | [REDACTED-KEY-1] | 80/100 | PENDING | -3 points |
+| 7 | Disable matt_test_user key | [REDACTED-KEY-2] | 72/100 | PENDING | -2 points |
 | 8 | Quarantine ACLAssassin + TokenTrickster | 2 roles | 75/70 | PENDING | -4 points |
 | 9 | Quarantine 7 CPF zombies | 7 roles | 60/100 each | PENDING | -4 points |
 | 10 | Quarantine SneakyTFCPFRole | 1 role | 65/100 | PENDING | -2 points |
@@ -291,12 +291,12 @@ Transparency matters. These numbers have not moved yet:
 
 | Identity | Type | Quarantined By | Status |
 |----------|------|---------------|--------|
-| role-RoleReaper_DNS | Role | Cole Horsman (SonraiUser) | QUARANTINED (NEW) |
-| cpf-zombie_outbreak | Role | Cole Horsman | QUARANTINED |
-| cpf-zombie_farmhouse | Role | Cole Horsman | QUARANTINED |
-| test-user-489 | User | Cole Horsman | QUARANTINED |
-| test-user-221 | User | Cole Horsman | QUARANTINED |
-| test-user-220 | User | Cole Horsman | QUARANTINED |
+| role-RoleReaper_DNS | Role | [REDACTED-USER-1] (SonraiUser) | QUARANTINED (NEW) |
+| cpf-zombie_outbreak | Role | [REDACTED-USER-1] | QUARANTINED |
+| cpf-zombie_farmhouse | Role | [REDACTED-USER-1] | QUARANTINED |
+| test-user-489 | User | [REDACTED-USER-1] | QUARANTINED |
+| test-user-221 | User | [REDACTED-USER-1] | QUARANTINED |
+| test-user-220 | User | [REDACTED-USER-1] | QUARANTINED |
 
 **Total quarantined in sandbox: 6 (was 5 before today — RoleReaper_DNS added)**
 **Staged for quarantine: 0**
